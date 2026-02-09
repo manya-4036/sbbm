@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+
+  /* BRIGHTER Indian Government Colors - NO DULL COLORS */
+  --color-bright-green: #22c55e;
+  --color-gov-green: #16a34a;
+  --color-dark-green: #15803d;
+  --color-saffron: #ff9933;
+  --color-royal-blue: #1e40af;
+  --color-ashoka-blue: #000080;
+
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Government India Aesthetic - BRIGHT COLORS */
+.gov-card {
+  @apply bg-white border border-slate-200 rounded-lg shadow-md hover:shadow-xl transition-all duration-300;
+}
+
+.gov-card-featured {
+  @apply bg-gradient-to-br from-green-50 to-white border-2 border-green-300 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300;
+}
+
+.glass-overlay {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.btn-gov-primary {
+  @apply bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.btn-gov-secondary {
+  @apply bg-white border-2 border-green-500 text-green-700 hover:bg-green-50 font-semibold py-3 px-8 rounded-md shadow-md hover:shadow-lg transition-all duration-300;
+}
+
+.btn-saffron {
+  @apply bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.btn-royal-blue {
+  @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+/* Government Pattern Backgrounds */
+.gov-pattern-bg {
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 153, 51, 0.08) 0%, transparent 50%);
+}
+
+.ashoka-pattern {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iIzIyYzU1ZSIgc3Ryb2tlLXdpZHRoPSIuNSIgb3BhY2l0eT0iLjEyIi8+PC9nPjwvc3ZnPg==');
+}
+
+/* Section Styling */
+.section-title {
+  @apply font-display font-bold text-4xl md:text-5xl text-green-700 mb-4;
+}
+
+.section-subtitle {
+  @apply text-lg text-slate-600 leading-relaxed;
+}
